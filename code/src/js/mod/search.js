@@ -14,7 +14,6 @@ export default class search{
 
     init(){
         this.start = 0
-        this.count = 20
         this.isfinally = false 
     }
 
@@ -25,7 +24,7 @@ export default class search{
             self.init()
             self.getData(val=>{
                 self.render(val)
-                self.$ele.trigger('scroll')
+                self.$ele.trigger('scroll.lazy') //触发图片懒加载，否则初始展现的图片不显示
             })   
         })
         this.$ele.scroll(function(){

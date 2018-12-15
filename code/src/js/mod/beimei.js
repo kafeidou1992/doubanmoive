@@ -7,7 +7,7 @@ export default class beimei{
         this.$ele = $('#us')
         this.getData(val=>{
             this.render(val)
-            this.$ele.trigger('scroll')
+            this.$ele.trigger('scroll.lazy') //该tab页面刷新加载时，触发图片懒加载，否则该页面初始展现的图片不显示
         })
     }
 
